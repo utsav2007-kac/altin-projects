@@ -264,7 +264,7 @@ body {
     position: absolute;
     width: 24px;
     height: 24px;
-    right: -12px;
+    right: -16px;
     background-color: var(--text-dark);
     border: 4px solid var(--bg-color);
     box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
@@ -276,7 +276,7 @@ body {
 }
 
 .timeline-item.right::after {
-    left: -12px;
+    left: -16px;
 }
 
 .timeline-item:hover::after {
