@@ -590,7 +590,7 @@ body {
 
     .timeline-item.left::after,
     .timeline-item.right::after {
-        left: 19px;
+        left: 15px;
     }
     
     .timeline-content {

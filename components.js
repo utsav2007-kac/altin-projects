@@ -96,11 +96,8 @@ class SiteComponents {
         // Insert Header
         appContainer.insertAdjacentHTML('afterbegin', this.getHeaderHTML());
 
-        // Insert Mobile Nav and Footer after the main element
-        const main = appContainer.querySelector('main');
-        if (main) {
-            main.insertAdjacentHTML('afterend', this.getMobileNavHTML() + this.getFooterHTML());
-        }
+        // Insert Mobile Nav and Footer at the end of the app container
+        appContainer.insertAdjacentHTML('beforeend', this.getMobileNavHTML() + this.getFooterHTML());
 
         this.setActiveLinks();
         
