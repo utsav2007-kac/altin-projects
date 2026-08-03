@@ -79,15 +79,20 @@ function initCursor() {
             });
         });
 
-        // Magnetic effect for links and buttons
-        const hoverTargets = document.querySelectorAll('a, button, .timeline-item img, .btn-contact, .portfolio-img-wrapper img, .about-image-wrapper img');
-        hoverTargets.forEach(target => {
-            target.addEventListener('mouseenter', () => {
+        // Magnetic effect for links and buttons using event delegation
+        // This ensures dynamically added elements (like components.js) still get the effect
+        document.addEventListener('mouseover', (e) => {
+            const target = e.target.closest('a, button, .timeline-item img, .btn-contact, .portfolio-img-wrapper img, .about-image-wrapper img, .hover-target');
+            if (target) {
                 cursor.classList.add('active');
-            });
-            target.addEventListener('mouseleave', () => {
+            }
+        });
+
+        document.addEventListener('mouseout', (e) => {
+            const target = e.target.closest('a, button, .timeline-item img, .btn-contact, .portfolio-img-wrapper img, .about-image-wrapper img, .hover-target');
+            if (target) {
                 cursor.classList.remove('active');
-            });
+            }
         });
     }
 }
@@ -374,15 +379,15 @@ function initPageAnimations() {
         });
     }
 
-    // --- PRODUCTS PAGE ANIMATIONS ---
-    const productsHeader = document.querySelector('.products-header');
-    if (productsHeader) {
-        gsap.to(productsHeader, { opacity: 1, duration: 1, ease: "power2.out" });
+    // --- BLOG PAGE ANIMATIONS ---
+    const blogHeader = document.querySelector('.blog-header');
+    if (blogHeader) {
+        gsap.to(blogHeader, { opacity: 1, duration: 1, ease: "power2.out" });
     }
 
-    const productCards = document.querySelectorAll('.product-card');
-    if (productCards.length) {
-        gsap.fromTo(productCards, 
+    const blogCards = document.querySelectorAll('.blog-card');
+    if (blogCards.length) {
+        gsap.fromTo(blogCards, 
             { y: 50, opacity: 0 },
             { 
                 y: 0, 
@@ -391,10 +396,38 @@ function initPageAnimations() {
                 stagger: 0.15,
                 ease: "power3.out",
                 scrollTrigger: {
-                    trigger: '.products-grid',
+                    trigger: '.blog-grid',
                     start: "top 85%"
                 }
             }
+        );
+    }
+
+    // --- BLOG DETAIL PAGE ANIMATIONS ---
+    const articleElements = document.querySelectorAll('.article-page .reveal');
+    if (articleElements.length) {
+        articleElements.forEach(el => {
+            gsap.fromTo(el,
+                { y: 40, opacity: 0 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.9,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 85%"
+                    }
+                }
+            );
+        });
+    }
+
+    const articleTitle = document.querySelector('.article-hero h1');
+    if (articleTitle) {
+        gsap.fromTo(articleTitle, 
+            { y: 30, opacity: 0 }, 
+            { y: 0, opacity: 1, duration: 1, ease: "power2.out", delay: 0.2 }
         );
     }
 

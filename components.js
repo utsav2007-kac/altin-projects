@@ -9,15 +9,12 @@ class SiteComponents {
             </nav>
             <div class="logo">
                 <a href="index.html" class="page-link">
-                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="12" y="10" width="5" height="28" rx="2.5" fill="#0F0F0F" />
-                        <path d="M 22 10 H 28 A 5 5 0 0 1 33 15 V 38 H 28 V 15 H 22 V 38 H 17 V 15 A 5 5 0 0 1 22 10 Z" fill="#0F0F0F" />
-                        <rect x="34" y="10" width="5" height="28" rx="2.5" fill="#0F0F0F" />
-                    </svg>
+                    <img src="images/logo.png" alt="Altin Projects" class="site-logo">
                 </a>
             </div>
             <nav class="nav-right">
                 <a href="collection.html" class="page-link">PORTFOLIO</a>
+                <a href="blog.html" class="page-link">BLOG</a>
                 <a href="contact.html" class="btn-contact page-link">CONTACT US</a>
             </nav>
         </header>
@@ -44,6 +41,10 @@ class SiteComponents {
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
                 Portfolio
             </a>
+            <a href="blog.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                Blog
+            </a>
             <a href="contact.html">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                 Contact
@@ -58,7 +59,7 @@ class SiteComponents {
             <div class="footer-content">
                 <div class="footer-left">
                     <h3>Studio</h3>
-                    <p>Dubai Design District (d3)<br>Building 6, Office 402<br>Dubai, UAE</p>
+                    <p>503, Asopalav Avenue,<br>Nana Mava Road,<br>Near Mahatma Gandhi School,<br>Rajkot, Gujarat - 360005</p>
                     <p class="phone">+971 50 123 4567</p>
                 </div>
                 <div class="footer-center">
