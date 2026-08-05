@@ -221,8 +221,47 @@ body {
 
 /* Timeline Section */
 .timeline-section {
+    position: relative;
+    /* Removed padding and overflow:hidden so GSAP can pin correctly */
+}
+
+.timeline-bg-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Full viewport height for pinning */
+    z-index: 0;
+}
+
+.timeline-video-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0; /* JS will fade it in */
+}
+
+.timeline-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(241, 239, 231, 0.6); /* Semi-transparent var(--bg-color) */
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 1;
+}
+
+.timeline-content-wrapper {
+    position: relative;
+    z-index: 2;
     padding: 8vw 4vw;
-    background-color: var(--bg-color);
+}
+
+.timeline-header, .timeline {
+    position: relative;
+    z-index: 2;
 }
 
 .timeline-header {

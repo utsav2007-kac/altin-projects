@@ -152,6 +152,44 @@ function initPageAnimations() {
         });
     }
 
+    const timelineSection = document.querySelector('.timeline-section');
+    const timelineVideo = document.querySelector('.timeline-video-bg');
+    const timelineBgContainer = document.querySelector('.timeline-bg-container');
+
+    if (timelineSection && timelineVideo && timelineBgContainer) {
+        // Pin the video background while scrolling through the timeline
+        ScrollTrigger.create({
+            trigger: timelineSection,
+            start: "top top",
+            end: "bottom bottom",
+            pin: timelineBgContainer,
+            pinSpacing: false
+        });
+
+        // Handle video fade and playback
+        ScrollTrigger.create({
+            trigger: timelineSection,
+            start: "top 60%",
+            end: "bottom 20%",
+            onEnter: () => {
+                gsap.to(timelineVideo, { opacity: 1, duration: 1.5 });
+                timelineVideo.play().catch(e => console.log("Video play blocked", e));
+            },
+            onLeave: () => {
+                gsap.to(timelineVideo, { opacity: 0, duration: 1 });
+                timelineVideo.pause();
+            },
+            onEnterBack: () => {
+                gsap.to(timelineVideo, { opacity: 1, duration: 1.5 });
+                timelineVideo.play().catch(e => console.log("Video play blocked", e));
+            },
+            onLeaveBack: () => {
+                gsap.to(timelineVideo, { opacity: 0, duration: 1 });
+                timelineVideo.pause();
+            }
+        });
+    }
+
     const timelineItems = document.querySelectorAll('.timeline-item');
     if(timelineItems.length) {
         timelineItems.forEach((item, index) => {
