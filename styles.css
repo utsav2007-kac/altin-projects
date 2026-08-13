@@ -67,6 +67,7 @@
 }
 html {
     scrollbar-width: none;
+    overflow-x: hidden;
 }
 
 body {
@@ -104,6 +105,7 @@ body {
     background-color: var(--bg-color);
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 .header {
@@ -1511,7 +1513,7 @@ body {
     
     /* Spaces We Create */
     .spaces-we-create-section {
-        padding: 8vh 5vw;
+        padding: 8vh 0;
     }
     .spaces-header h2 {
         font-size: 2.2rem;
@@ -1526,7 +1528,7 @@ body {
         width: 100%;
     }
     .premium-space-content {
-        width: 90%;
+        width: 100%;
         position: relative;
         margin-top: -40px;
         right: auto;
@@ -1539,7 +1541,7 @@ body {
         right: auto;
     }
     .content-box {
-        padding: 30px 25px;
+        padding: 30px 20px;
         box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
     .content-box h3 {
@@ -1553,14 +1555,14 @@ body {
     
     /* How We Work Timeline */
     .timeline-section {
-        padding: 8vh 5vw;
+        padding: 8vh 0;
     }
     .timeline::after {
         left: 20px;
     }
     .timeline-item {
         width: 100%;
-        padding-left: 60px;
+        padding-left: 50px;
         padding-right: 0;
         margin-bottom: 50px;
     }
@@ -1579,7 +1581,7 @@ body {
     
     /* Why Altin */
     .why-altin-section {
-        padding: 8vh 5vw;
+        padding: 8vh 0;
     }
     .why-features {
         flex-direction: column;
@@ -1601,6 +1603,9 @@ body {
     }
 
     /* About Page */
+    .about-page {
+        padding: 8vh 0;
+    }
     .about-grid {
         grid-template-columns: 1fr;
         gap: 5vh;
@@ -1610,6 +1615,9 @@ body {
     }
     
     /* Services Page */
+    .services-page {
+        padding: 8vh 0;
+    }
     .service-row, .service-row.reverse {
         flex-direction: column-reverse;
         gap: 3vh;
