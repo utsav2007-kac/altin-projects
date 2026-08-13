@@ -152,6 +152,39 @@ function initPageAnimations() {
         });
     }
 
+    // --- SPACES WE CREATE ANIMATIONS (Premium Layout) ---
+    const premiumSpaces = document.querySelectorAll('.premium-space-row');
+    if(premiumSpaces.length) {
+        premiumSpaces.forEach(row => {
+            gsap.to(row, {
+                scrollTrigger: {
+                    trigger: row,
+                    start: "top 85%",
+                    toggleClass: "active",
+                    once: true
+                }
+            });
+            
+            // Image Parallax
+            const img = row.querySelector('.premium-space-image img');
+            if(img) {
+                gsap.fromTo(img, 
+                    { y: -30, scale: 1.1 },
+                    {
+                        y: 30, scale: 1,
+                        ease: "none",
+                        scrollTrigger: {
+                            trigger: row,
+                            start: "top bottom",
+                            end: "bottom top",
+                            scrub: true
+                        }
+                    }
+                );
+            }
+        });
+    }
+
     const timelineSection = document.querySelector('.timeline-section');
     const timelineVideo = document.querySelector('.timeline-video-bg');
     const timelineBgContainer = document.querySelector('.timeline-bg-container');
@@ -245,6 +278,32 @@ function initPageAnimations() {
                 );
             }
         });
+    }
+
+    // --- WHY ALTIN ANIMATIONS ---
+    const whyAltinSection = document.querySelector('.why-altin-section');
+    if (whyAltinSection) {
+        gsap.fromTo('.feature-item', 
+            { y: 30, opacity: 0 },
+            { 
+                y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: "power3.out",
+                scrollTrigger: {
+                    trigger: '.why-features',
+                    start: "top 85%"
+                }
+            }
+        );
+
+        gsap.fromTo('.stat-item', 
+            { scale: 0.8, opacity: 0 },
+            { 
+                scale: 1, opacity: 1, duration: 1, stagger: 0.2, ease: "back.out(1.7)",
+                scrollTrigger: {
+                    trigger: '.why-stats',
+                    start: "top 90%"
+                }
+            }
+        );
     }
 
     // --- COLLECTION PAGE ANIMATIONS ---

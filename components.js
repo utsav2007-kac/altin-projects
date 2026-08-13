@@ -2,20 +2,16 @@ class SiteComponents {
     static getHeaderHTML() {
         return `
         <header class="header">
-            <nav class="nav-left">
-                <a href="index.html" class="page-link">HOME</a>
-                <a href="about.html" class="page-link">ABOUT</a>
-                <a href="services.html" class="page-link">SERVICES</a>
-            </nav>
             <div class="logo">
                 <a href="index.html" class="page-link">
                     <img src="images/logo.png" alt="Altin Projects" class="site-logo">
                 </a>
             </div>
             <nav class="nav-right">
-                <a href="collection.html" class="page-link">PORTFOLIO</a>
-                <a href="blog.html" class="page-link">BLOG</a>
-                <a href="contact.html" class="btn-contact page-link">CONTACT US</a>
+                <a href="about.html" class="page-link">About Us</a>
+                <a href="services.html" class="page-link">Services</a>
+                <a href="collection.html" class="page-link">Portfolio</a>
+                <a href="contact.html" class="btn-contact page-link">Contact Us</a>
             </nav>
         </header>
         `;
@@ -58,15 +54,17 @@ class SiteComponents {
         <footer class="global-footer">
             <div class="footer-content">
                 <div class="footer-left">
-                    <h3>Studio</h3>
-                    <p>503, Asopalav Avenue,<br>Nana Mava Road,<br>Near Mahatma Gandhi School,<br>Rajkot, Gujarat - 360005</p>
-                    <p class="phone">+971 50 123 4567</p>
+                    <p class="brand-text">Have a Space in Mind?</p>
+                    <p class="brand-subtext">Let's turn your vision into a space that's ready for life, work and everything in between.</p>
+                    <div class="contact-details">
+                        <p>503-504, Asopalav Avenue,<br>Nana Mava Road, Rajkot,<br>Gujarat - 360005</p>
+                        <p class="phone">+91 8866504884</p>
+                        <p class="email">contact@altinprojects.com</p>
+                    </div>
                 </div>
-                <div class="footer-center">
-                    <p class="brand-text">Varieties of Interiors</p>
-                </div>
+                
                 <div class="footer-right">
-                    <h3>Follow Us</h3>
+                    <h3>Social</h3>
                     <div class="social-icons">
                         <a href="#" aria-label="Instagram" class="hover-target">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
@@ -84,7 +82,7 @@ class SiteComponents {
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Joy of Living. All rights reserved.</p>
+                <p>&copy; 2026 Altin Projects. All rights reserved.</p>
             </div>
         </footer>
         `;
